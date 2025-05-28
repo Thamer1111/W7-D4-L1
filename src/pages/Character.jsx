@@ -13,23 +13,23 @@ export default function Character() {
             name,
             imge,
             gender,
-        }).then(()=>{
+        }).then(() => {
 
             axios.get(url).then((res) => {
-            setCharacters(res.data)
-            console.log(res.data);
+                setCharacters(res.data)
 
-        })
+            })
 
         });
 
-        
-
     }
 
+    useEffect(() => {
+        axios.get(url).then((res) => {
+            setCharacters(res.data)
 
-
-
+        })
+    })
 
     return (
         <div className=''>
